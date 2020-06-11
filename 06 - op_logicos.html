@@ -4,7 +4,22 @@
     </head>
     <body>
         <script>
-            
+            //AND, OR, COND
+            var sexo = 'M', idade = 23;
+            if ( sexo === 'M' && idade > 18){
+                console.log('E AND && apto');
+            }
+            if ( sexo === 'F' || idade <= 31){
+                console.log('Ou OR || Apto')
+            }
+            if ( sexo !== 'F'){
+                console.log('Não é != Feminino')
+            }
+            if ( sexo != 'M'){
+                masculino = false;
+            }
+            feminino = (sexo === 'F') // retorna bool direto
+            console.log(feminino);
         </script>
     </body>
 </html>
