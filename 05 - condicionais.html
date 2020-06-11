@@ -4,7 +4,31 @@
     </head>
     <body>
         <script>
+            function retornaSexo(sexo){
+                //if(sexo === 'm'){  //Define que até o tipo deve ser igual
+                if (sexo == 'm'){
+                    return 'Masculino';
+                } else if (sexo = 'f') {
+                    return 'Feminino';
+                } else {
+                    return 'Outro';
+                }
+            }
+            var resultadoIf = retornaSexo('m');
+            console.log(resultadoIf);
             
+            function retornaSexoCase(sexo){
+                switch (sexo) {
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+                default:
+                    return 'Outro';
+                }
+            }
+            var resultadoCase = retornaSexoCase('F');
+            console.log(resultadoCase);
         </script>
     </body>
 </html>
