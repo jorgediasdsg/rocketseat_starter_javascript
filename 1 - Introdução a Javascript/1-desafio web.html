@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio Módulo 1</title>
+</head>
+<body>
+    <h1>Desafio Módulo 1</h1>   
+    <h2>Execício 1</h2> 
+    <p>
+            <strong>Crie uma função que dado o objeto a seguir:</strong>
+        </br></br>
+            var endereco = {</br>
+             rua: "Rua dos pinheiros",</br>
+             numero: 1293,</br>
+             bairro: "Centro",</br>
+             cidade: "São Paulo",</br>
+             uf: "SP"</br>
+            };</br>
+        </br>
+            <strong>Retorne o seguinte conteúdo:</strong>
+        </br></br>
+            O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros" com
+            nº 1293.
+    </p>
+    <button onclick='mostraEnderecoExerc1()'>Endereço</button>
+    </p>
+
+
+    __________________________________________________________________________________
+    </p>
+    <h2>2º exercício</h2>
+    <p>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</p>
+</br>
+        function pares(x, y) {</br>
+        // código aqui</br>
+        }</br>
+        pares(32, 321);</br>
+        <label>Numero1: </label><input id="numero1" type="number"></br>
+        <label>Numero2: </label><input id="numero2" type="number"></br>
+        <button onclick="mostraParExerc2()">Resultado</button>
+    </p>
+   __________________________________________________________________________________
+    </p>
+
+        <h2>3º exercício</h2>
+        <strong><p>Escreva uma função que verifique se o vetor de habilidades 
+            passado possui a habilidade "Javascript"
+        e retorna um booleano true/false caso exista ou não.</p></strong>
+        <p>function temHabilidade(skills) {</br>
+         // código aqui</br>
+        }</br>
+        var skills = ["Javascript", "ReactJS", "React Native"];</br>
+        temHabilidade(skills); // true ou false</p>
+        Dica: para verificar se um vetor contém um valor, utilize o método indexOf</br>
+    </p>
+    <button onclick="temHabilidadeExerc3()">Testa Habilidade</button>
+   __________________________________________________________________________________
+    </p>
+    <h2>4º exercício</h2>
+        <strong><p>Escreva uma função que dado um total de anos de estudo retorna 
+            o quão experiente o usuário é:</p></strong>
+    <p>function experiencia(anos) {</p>
+    <p> // código aqui</p>
+    <p>}</p>
+    <p>var anosEstudo = 7;</p>
+    <p>experiencia(anosEstudo);</p>
+    <p>// De 0-1 ano: Iniciante</p>
+    <p>// De 1-3 anos: Intermediário</p>
+    <p>// De 3-6 anos: Avançado</p>
+    <p>// De 7 acima: Jedi Master</p>
+    <label>Nível<input type="number" id="anosExperiencia"></label>
+<button onclick="descobreNivelExerc4()">Descobre nível</button></br>
+__________________________________________________________________________________
+    </br>
+    <h2>5º exercício</h2>
+    <h3>Dado o seguinte vetor de objetos:</h3>
+    <p>var usuarios = [</p>
+    <p> {</p>
+    <p> nome: "Diego",</p>
+    <p> habilidades: ["Javascript", "ReactJS", "Redux"]</p>
+    <p> },</p>
+    <p> {</p>
+    <p> nome: "Gabriel",</p>
+    <p> habilidades: ["VueJS", "Ruby on Rails", "Elixir"]</p>
+    <p> }</p>
+    <p>];</p>
+    <strong><p>Escreva uma função que produza o seguinte resultado:</br></strong></br>
+    O Diego possui as habilidades: Javascript, ReactJS, Redux</br>
+    O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir</br></br>
+    Dica: Para percorrer um vetor você deve utilizar a sintaxe for...of e para unir valores de um array
+    com um separador utilize o join.</p></br>
+
+<label>Dev <select type="text" id="usuario">
+    <option>Jorge</option>
+    <option>Camila</option>
+</select>
+</label>
+<button onclick="mostraHabilidadesExerc5()">Descobre Habilidades</button></br>
+__________________________________________________________________________________
+    </br>
+
+<script src=1-desafio.js></script>
+</script>
+</body>
+</html>

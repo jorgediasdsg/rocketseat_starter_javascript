@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS RS EX1 Cria Quadrado</title>
+</head>
+<body>
+    <h1>Cria Quadrado</h1>    
+    <div id="app">
+
+    </div>
+    <script>
+        // Gerando Cor aleatória
+        function geraCorAleatoria() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        //Localizando local para inserir
+        var appContainer = document.querySelector('#app');
+        //Criando Componente Botão
+        var btnAddQuadrado = document.createElement('button');
+        //Criando texto do botão
+        var btnText = document.createTextNode('Adiciona');
+        //Criando colocando texto no botão
+        btnAddQuadrado.appendChild(btnText);
+        //Dando um talento no CSS        
+        btnAddQuadrado.style.width = "100px";
+        btnAddQuadrado.style.height = "50px";
+        btnAddQuadrado.style.backgroundColor = "green";
+        appContainer.appendChild(btnAddQuadrado);
+
+        btnAddQuadrado.onclick = function() {
+            var quadradoElement = document.createElement('div');
+
+            quadradoElement.style.height = "100px";
+            quadradoElement.style.width = "100px";
+            quadradoElement.style.backgroundColor = "#F00";
+            quadradoElement.style.margin = "5px";
+                
+            quadradoElement.onmouseover = function(){
+                quadradoElement.style.backgroundColor = geraCorAleatoria();
+            };
+
+            appContainer.appendChild(quadradoElement);
+
+        };
+    </script>
+</body>
+</html>

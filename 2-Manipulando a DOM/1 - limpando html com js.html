@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - RS - Manipulando DOM</title>
+</head>
+<body>
+    <h1>PowerToDo</h1>
+    <div id=app>
+        <input name="nome" type="text">
+        <button class="botao">Adicionar</button>
+    </div>
+    <script>
+        //var inputElement = document.getElementById('nome'); // Captura por ID Único
+        //var inputElement = document.getElementsByTagName('input')[0]; // Retorna Vetor
+        //var inputElement = document.getElementsByClassName('nome')[0]; // Retorna Vetor
+        //var inputElement = document.querySelector('body div#app input');
+        //var inputElement = document.querySelector('input[name=nome]'); //retorna somente um único elemento.
+        //console.log(inputElement);
+        var inputElement = document.querySelector("input[name=nome]")
+        var btnElement = document.querySelector('button.botao');
+        btnElement.onclick = function(){
+            var text = inputElement.value;
+             alert(text);
+        }
+    </script>
+</body>
+</html>

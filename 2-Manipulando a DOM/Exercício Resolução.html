@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Exercício 04</title>
+</head>
+
+<body>
+  <ul></ul>
+
+  <input type="text" name="nome">
+  <button onclick="adicionar()">Adicionar</button>
+
+  <script>
+    //Captura a tecla enter para enviar.
+    document.addEventListener('keypress', function(e){
+      if(e.which == 13){
+        adicionar();
+      }
+    }, false);
+
+
+    var nomes = ['Diego', 'Gabriel', 'Lucas'];
+    var listElement = document.querySelector('ul');
+    var inputElement = document.querySelector('input');
+
+    function addItem(text) {
+      var liElement = document.createElement('li');
+      var textElement = document.createTextNode(text);
+        liElement.onclick = function(){
+            listElement.removeChild(liElement);
+        }
+      liElement.appendChild(textElement);
+      listElement.appendChild(liElement);
+    }
+
+    function adicionar() {
+      addItem(inputElement.value);
+      inputElement.value = "";
+    }
+
+    for (nome of nomes) {
+      addItem(nome);
+    }
+  </script>
+</body>
+
+</html>

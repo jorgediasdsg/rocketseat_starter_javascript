@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS RS 2 - Lidando com elementos</title>
+</head>
+<body>
+    <h1>PowerToDo</h1>
+    <div id="app">
+        <input id="nome"/>
+    </div>    
+    <script>
+        //Criando elementos dentro do body
+        // Criando um link <a href...>
+        var linkElement = document.createElement('a');
+        // Setando atributo href
+        linkElement.setAttribute('href','https://rocketseat.com.br');
+        // Setando atributo title
+        linkElement.setAttribute('title','Site Top da RocketSeat');
+        // Criando texto para exibição.
+        var textElement = document.createTextNode('Acessar site da Rocketseat');
+        // Linkando texto no link como filho
+        linkElement.appendChild(textElement);
+
+        // Capturando Componente da view para usar
+        var containerElement = document.querySelector('#app');
+        // Setando o link dentro do componente da view
+        containerElement.appendChild(linkElement);
+        
+        // Capturando componente para remoção da View
+        var inputElement = document.querySelector("#nome");
+        // Removendo componente da View
+        containerElement.removeChild(inputElement);
+    </script>
+</body>
+</html>
