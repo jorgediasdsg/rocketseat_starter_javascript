@@ -5,8 +5,17 @@
     </head>
     <body>
         <script>
+            //For - Use quando sabe o tamanho exato do intervalo.
             for (var i = 0; i <= 9; i++){
-                console.log(i)
+                console.log('for - '+i)
+            }
+            //While - Use quando não sabe o tamanho exato do intervalo.
+            var j = 1565652231, i=0;
+
+            while(j > 50){
+                i++
+                console.log('while - '+i+' = '+j)
+                j /= 5; //dividido iterando.
             }
         </script>
     </body>
