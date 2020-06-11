@@ -5,7 +5,15 @@
     </head>
     <body>
         <script>
-            
+            var i = 0;
+            function exibeAlgo(){
+                console.log('Hello World! '+i)
+                i++;
+            }
+            function intervalo(){ 
+                setInterval(exibeAlgo, 1000);//Função para exibir alguma coisa a cada 1s
+            }
+            setTimeout(intervalo, 5000);//Função para exibir alguma coisa depois de 5s
         </script>
     </body>
 </html>
