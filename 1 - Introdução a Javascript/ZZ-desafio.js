@@ -1,4 +1,4 @@
-    //Lista feita no início dos estudos.
+    //Lista feita no início dos estudos a 2 anos atrás, com alguns pontos de vista diferentes.
     //Exercício 1
     var endereco = {
         rua: "Rua dos pinheiros",
