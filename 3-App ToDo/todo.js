@@ -24,8 +24,8 @@ function renderTodos(){
         linkElement.setAttribute('onclick','deleteTodo(' + pos + ')');
         var linkText = document.createTextNode('X');
         todoElement.appendChild(linkElement);
-        linkElement.appendChild(linkText);
         todoElement.appendChild(todoText);
+        linkElement.appendChild(linkText);
         listElement.appendChild(todoElement);
     }   
 }
@@ -37,7 +37,7 @@ function addTodo(){
     renderTodos();
 
 }
-buttonElement.onclick = addTodo;
+//buttonElement.onclick = addTodo;
 
 function deleteTodo(pos){
     todos.splice(pos, 1);
