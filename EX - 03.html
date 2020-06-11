@@ -8,3 +8,23 @@ var skills = ["Javascript", "ReactJS", "React Native"];
 temHabilidade(skills); // true ou false
 Dica: para verificar se um vetor contém um valor, utilize o método indexOf
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <script>
+        function temHabilidade(skills){
+            //var habilidade = skills.indexOf('Javascript');
+            resultado = (skills.indexOf('Javascript') >= 0)? true : false; // inline
+            //resultado = (habilidade >= 0)? true : false;
+            console.log(resultado);
+        }
+        var skills = ['Javascript','ReactJS','React Native'];
+        temHabilidade(skills); //true or false
+    </script>
+</body>
+</html>
