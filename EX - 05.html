@@ -19,3 +19,33 @@ com um separador utilize o join.
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for...of
 
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <script>
+        function listaHabilidades(usuarios){
+            console.log(usuarios);
+            for ( let usuario of usuarios ){
+                // Não foi necessário o join, mas se fosse seria... let habilidades = usuario.habilidades => habilidades.join()
+                console.log('O '+usuario.nome+' possue as habilidades: '+usuario.habilidades+'.');
+            }
+        }
+        var usuarios = [
+        {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+        ];
+        listaHabilidades(usuarios);
+    </script>
+</body>
+</html>
