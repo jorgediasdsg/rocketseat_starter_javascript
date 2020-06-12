@@ -17,91 +17,91 @@ Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Repo</title>
-</head>
-<body>
-    <div>
-        <h1>Consulta GitHub</h1>
-        <input type="text" name="user" placeholder='login' value='jorgediasdsg'>
-        <button onclick="buscaUsuario()">Buscar</button>
-        <!-- <p  style="display:none;">carregando ...</p> -->
-        </br>
-        <img id="loading" style="display:none;" src="https://thumbs.gfycat.com/RemorsefulInfatuatedCaterpillar-size_restricted.gif" alt="loading" width=80 height=80>
-        <div id='app'></div>
-        <ul></ul>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script>
-            function buscaUsuario(){
-                document.getElementById('loading').style.display = 'block';
-                
-                let user = document.querySelector('body input').value;
-                let listRepos = document.querySelector('ul');
-                let userData = document.getElementById('app');
-                
-                function exibeRepositorios(repos){
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHub Repo</title>
+    </head>
+    <body>
+        <div>
+            <h1>Consulta GitHub</h1>
+            <input type="text" name="user" placeholder='login' value='jorgediasdsg'>
+            <button onclick="buscaUsuario()">Buscar</button>
+            <!-- <p  style="display:none;">carregando ...</p> -->
+            </br>
+            <img id="loading" style="display:none;" src="https://thumbs.gfycat.com/RemorsefulInfatuatedCaterpillar-size_restricted.gif" alt="loading" width=80 height=80>
+            <div id='app'></div>
+            <ul></ul>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script>
+                function buscaUsuario(){
+                    document.getElementById('loading').style.display = 'block';
                     
-                    listRepos.innerHTML = '';
+                    let user = document.querySelector('body input').value;
+                    let listRepos = document.querySelector('ul');
+                    let userData = document.getElementById('app');
                     
-                    divUser = document.createElement('div');
-                    tituloUser = document.createElement('h1');
-                    linkUser = document.createElement('a');
-                    avatarUser = document.createElement('img');
+                    function exibeRepositorios(repos){
+                        
+                        listRepos.innerHTML = '';
+                        
+                        divUser = document.createElement('div');
+                        tituloUser = document.createElement('h1');
+                        linkUser = document.createElement('a');
+                        avatarUser = document.createElement('img');
 
-                    
-                    let loginUser = document.createTextNode(repos.data[0].owner.login);
-                    
-                    tituloUser.appendChild(loginUser);
-                    
-                    avatarUser.setAttribute('src', repos.data[0].owner.avatar_url);
-                    avatarUser.setAttribute('width',80);
-                    avatarUser.setAttribute('height',80);
-                    
-                    linkUser.setAttribute('href', repos.data[0].owner.html_url);
-                    linkUser.setAttribute('title', repos.data[0].owner.login);
-                    
-                    let imgUser = document.createTextNode(avatarUser);
-                    
-                    linkUser.appendChild(avatarUser);
-                    
-                    divUser.appendChild(tituloUser);
-                    divUser.appendChild(linkUser);
-                    listRepos.appendChild(divUser);
-                    
-                    for ( let repo of repos.data ){
                         
-                        nomeRepo = repo.name;
-                        urlRepo = repo.html_url;
+                        let loginUser = document.createTextNode(repos.data[0].owner.login);
                         
-                        // Criando um link <a href...>
-                        var ulElement = document.createElement('li')
-                        var linkElement = document.createElement('a');
-                        // Setando atributo href
-                        linkElement.setAttribute('href',urlRepo);
-                        // Setando atributo title
-                        linkElement.setAttribute('title',nomeRepo);
-                        // Criando texto para exibição.
-                        var textElement = document.createTextNode(nomeRepo);
-                        // Linkando texto no link como filho
-                        linkElement.appendChild(textElement);
-                        ulElement.appendChild(linkElement)
-                        listRepos.appendChild(ulElement);
+                        tituloUser.appendChild(loginUser);
+                        
+                        avatarUser.setAttribute('src', repos.data[0].owner.avatar_url);
+                        avatarUser.setAttribute('width',80);
+                        avatarUser.setAttribute('height',80);
+                        
+                        linkUser.setAttribute('href', repos.data[0].owner.html_url);
+                        linkUser.setAttribute('title', repos.data[0].owner.login);
+                        
+                        let imgUser = document.createTextNode(avatarUser);
+                        
+                        linkUser.appendChild(avatarUser);
+                        
+                        divUser.appendChild(tituloUser);
+                        divUser.appendChild(linkUser);
+                        listRepos.appendChild(divUser);
+                        
+                        for ( let repo of repos.data ){
+                            
+                            nomeRepo = repo.name;
+                            urlRepo = repo.html_url;
+                            
+                            // Criando um link <a href...>
+                            var ulElement = document.createElement('li')
+                            var linkElement = document.createElement('a');
+                            // Setando atributo href
+                            linkElement.setAttribute('href',urlRepo);
+                            // Setando atributo title
+                            linkElement.setAttribute('title',nomeRepo);
+                            // Criando texto para exibição.
+                            var textElement = document.createTextNode(nomeRepo);
+                            // Linkando texto no link como filho
+                            linkElement.appendChild(textElement);
+                            ulElement.appendChild(linkElement)
+                            listRepos.appendChild(ulElement);
+                        }
                     }
-                }
-                axios.get('http://api.github.com/users/'+user+'/'+'repos')
-                .then(function(response) {
-                    exibeRepositorios(response);
-                    document.getElementById('loading').style.display = 'none';
-                })
-                .catch(function(error){
-                    console.log(error);
-                    console.warn("O usuário "+user+" não foi encontrado!")
-                    document.getElementById('loading').style.display = 'none';
-                });
-            }    
-        </script>
-    </div>
-</body>
+                    axios.get('http://api.github.com/users/'+user+'/'+'repos')
+                    .then(function(response) {
+                        exibeRepositorios(response);
+                        document.getElementById('loading').style.display = 'none';
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                        console.warn("O usuário "+user+" não foi encontrado!")
+                        document.getElementById('loading').style.display = 'none';
+                    });
+                }    
+            </script>
+        </div>
+    </body>
 </html>
